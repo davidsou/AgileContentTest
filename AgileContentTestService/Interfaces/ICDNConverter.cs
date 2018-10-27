@@ -1,4 +1,5 @@
 ﻿using AgileContentTestDomain.Entities;
+using System.Net.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,10 @@ namespace AgileContentTestDomain.Interfaces
 {
     public interface ICDNConverter
     {
-        
-        Result<TOutput> Converter<TOutput, TInput>(TInput File);
-        Result<TOutput> ReadFile<TOutput>(string path);
+        List<string> Messages { get; }
+        Task<Agora> DownloadConverterAsync(string url, string path);
+
+
 
     }
 }

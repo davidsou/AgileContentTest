@@ -10,44 +10,25 @@ namespace AgileContentTestDomain.Entities
     [DelimitedRecord("|")]
     public class MinhaCDN
     {
-        
+        [FieldOrder(1)]
         public string ResponseSize { get; set; }
-        
+        [FieldOrder(2)]
         public string StatusCode { get; set; }
-        
+
+        [FieldOrder(3)]
         public string CacheStatus { get; set; }
 
-        private string httpMethodUriPath;
 
-        
-        public string HttpMethodUriPath
-        {
-            get
-            {
-                return httpMethodUriPath;
-            }
-            set
-            {
-                SetProviderAndHttpMetod(value);
-                httpMethodUriPath = value;
-            }
-        }
-        
-        public string Provider { get; set; }
-        
-        public string HttpMethod { get; set; }
-        
-        public string UriPath { get; set; }
+        [FieldOrder(4)]
+        public string HttpMethodUriPath { get; set; }
 
+
+
+        [FieldOrder(5)]
         [FieldConverter(ConverterKind.Decimal)]
         public decimal TimeTaken { get; set; }
 
-        void SetProviderAndHttpMetod(string prop)
-        {
-            string[] arr = prop.Split(' ');
-            this.Provider = arr[0].Substring(1).Trim();
-            this.HttpMethod = arr[1].Trim();
-        }
+     
 
     }
 }

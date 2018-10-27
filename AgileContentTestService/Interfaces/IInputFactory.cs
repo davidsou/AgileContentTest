@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AgileContentTestDomain.Interfaces
 {
-//    public interface IInputFactory
-//    {
-//        TInput SelectInputType<TInput>(FileTypeEnums input);
-            
-//    }
+    public interface IInputFactory
+    {
+        TInput SelectInputType<TInput>();
+
+    }
 }

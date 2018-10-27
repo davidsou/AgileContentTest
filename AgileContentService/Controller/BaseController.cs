@@ -15,7 +15,11 @@ namespace AgileContentService.Controller
 
             return Ok(new { Success = false, Messages = messages } );
         }
-               
+
+        protected async Task<IHttpActionResult> Success(List<string> message = null)
+        {
+            return Ok(new { Success = true, Messages = message });
+        }
 
         protected async Task<IHttpActionResult> Success<T>(T data, List<string> message = null)
         {
